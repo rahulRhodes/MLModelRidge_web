@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FWI prediction model</title>
+</head>
+<body style="font-family: Arial, sans-serif; text-align: center; margin-top: 50px;">
+
+    <h2 style="color: #333;">FWI Prediction</h2>
+
+    <!--Main Input for receiving Query to our ML-->
+    
+    <form action="{{url_for('predict_datapoint')}}" method="POST" style="background: #f9f9f9; padding: 20px; border-radius: 10px; display: inline-block;">
+        <input type="text" id="Temperature" name="Temperature" placeholder="Temperature" required='required'
+               style="padding: 8px; font-size: 16px; border: 1px solid #ccc; border-radius: 5px; margin: 10px;">
+        <br>
+        <input type="text" id="RH" name="RH" placeholder="RH" required='required'
+               style="padding: 8px; font-size: 16px; border: 1px solid #ccc; border-radius: 5px; margin: 10px;">
+        <br>
+        <input type="text" id="Ws" name="Ws" placeholder="Ws" required='required'
+               style="padding: 8px; font-size: 16px; border: 1px solid #ccc; border-radius: 5px; margin: 10px;">
+        <br>
+        <input type="text" id="Rain" name="Rain" placeholder="Rain" required='required'
+               style="padding: 8px; font-size: 16px; border: 1px solid #ccc; border-radius: 5px; margin: 10px;">
+        <br>
+        <input type="text" id="FFMC" name="FFMC" placeholder="FFMC" required='required'
+               style="padding: 8px; font-size: 16px; border: 1px solid #ccc; border-radius: 5px; margin: 10px;">
+        <br>
+        <input type="text" id="DMC" name="DMC" placeholder="DMC" required='required'
+               style="padding: 8px; font-size: 16px; border: 1px solid #ccc; border-radius: 5px; margin: 10px;">
+        <br>
+        <input type="text" id="ISI" name="ISI" placeholder="ISI" required='required'
+               style="padding: 8px; font-size: 16px; border: 1px solid #ccc; border-radius: 5px; margin: 10px;">
+        <br>
+        <input type="text" id="Classes" name="Classes" placeholder="Classes" required='required'
+               style="padding: 8px; font-size: 16px; border: 1px solid #ccc; border-radius: 5px; margin: 10px;">
+        <br>
+        <input type="text" id="Region" name="Region" placeholder="Region" required='required'
+               style="padding: 8px; font-size: 16px; border: 1px solid #ccc; border-radius: 5px; margin: 10px;">
+        <br>
+
+
+
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+    <h2> THE FWI prediction is {{results}} </h2>
+
+</body>
+</html>
